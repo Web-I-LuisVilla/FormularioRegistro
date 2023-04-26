@@ -56,12 +56,13 @@ let tabla=[
       alert('Ingrese la direccion')
       return
     }
-    if(!cedula) {
-    cedula = tabla.getElementById(cedula)
-    alert('usuario ya creado con esa cedula')
-    return
+    for (let index = 0; index < tabla.length; index++) {
+      if(tabla[index].cedula === cedula ) {
+        alert('usuario ya creado con esa cedula')
+        return
+        }
+      
     }
-  
     let i=1;
     cuerpotabla.innerHTML=`<tr><th scope="row">${(i+1)}</th><td>${nombre}</td><td>${apellido}</td><td>${cedula}</td>
     <td>${correo}</td><td>${telefono}</td><td>${edad}</td><td>${fecha_de_nacimiento}</td><td>${direccion}</td></tr>`
